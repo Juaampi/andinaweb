@@ -1,0 +1,26 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84 84">
+  <defs>
+    <linearGradient id="waRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8ee7ff"/>
+      <stop offset="100%" stop-color="#1698d8"/>
+    </linearGradient>
+    <linearGradient id="waSky" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#37cbff"/>
+      <stop offset="100%" stop-color="#0a4572"/>
+    </linearGradient>
+    <linearGradient id="waMountain" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#effbff"/>
+      <stop offset="100%" stop-color="#66d7ff"/>
+    </linearGradient>
+  </defs>
+  <circle cx="42" cy="42" r="38" fill="#081b2c" stroke="url(#waRing)" stroke-width="3"/>
+  <circle cx="42" cy="42" r="33" fill="url(#waSky)"/>
+  <path d="M12 55 27 39l8 10 11-18 26 24Z" fill="#0a2c48"/>
+  <path d="M18 57 30 44l8 9 11-18 17 22Z" fill="url(#waMountain)"/>
+  <path d="m35 46 4 6 9-14 4 4-10 17Z" fill="#f8feff" opacity=".88"/>
+  <path d="M16 28h14l10-10" fill="none" stroke="#9feaff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M40 18h10l8 8" fill="none" stroke="#9feaff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="16" cy="28" r="4" fill="#dff9ff"/>
+  <circle cx="40" cy="18" r="5" fill="#dff9ff"/>
+  <circle cx="58" cy="26" r="4" fill="#dff9ff"/>
+</svg>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andina Estética | Demo de asistente virtual | WebAndina</title>
+    <meta name="description" content="Demo conceptual de asistente virtual para centros de estética. Ejemplo de reservas, tratamientos y consultas guiadas sin base de datos.">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link rel="apple-touch-icon" href="./favicon-180.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./demo-assistant.css">
+    <style>
+        body.demo-page {
+            --demo-bg: #0c1820;
+            --demo-bg-soft: #13252e;
+            --demo-accent: #9be0da;
+            --demo-accent-strong: #63c7bf;
+            --demo-accent-soft: rgba(155, 224, 218, 0.18);
+            --demo-line: rgba(155, 224, 218, 0.18);
+        }
+
+        .estetica-glow {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            background:
+                radial-gradient(circle at 20% 12%, rgba(255,255,255,0.10), transparent 22%),
+                radial-gradient(circle at 78% 14%, rgba(155,224,218,0.20), transparent 24%),
+                radial-gradient(circle at 50% 85%, rgba(255,255,255,0.06), transparent 20%);
+        }
+    </style>
+</head>
+<body class="demo-page">
+    <div class="estetica-glow" aria-hidden="true"></div>
+
+    <div class="demo-shell">
+        <header class="demo-topbar">
+            <div class="demo-container">
+                <div class="demo-topbar-inner">
+                    <a class="demo-brand" href="./index.html">
+                        <span class="demo-brand-mark" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 3c2.4 3.3 3.6 5.8 3.6 7.6A3.6 3.6 0 1 1 8.4 10.6C8.4 8.8 9.6 6.3 12 3Z"/>
+                                <path d="M6 17c1.3 2.2 3.2 3 6 3s4.7-.8 6-3"/>
+                            </svg>
+                        </span>
+                        <span class="demo-brand-copy">
+                            <strong>Andina Estética</strong>
+                            <small>Demo de asistente virtual</small>
+                        </span>
+                    </a>
+
+                    <nav class="demo-nav">
+                        <a href="./peluqueria">Peluquería</a>
+                        <a href="./estetica">Estética</a>
+                        <a href="./cursos">Cursos</a>
+                        <a href="./index.html" class="demo-pill-link">Volver a WebAndina</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main class="demo-main">
+            <div class="demo-container">
+                <section class="demo-hero">
+                    <article class="demo-panel demo-reveal">
+                        <div class="demo-panel-copy">
+                            <span class="demo-badge">Demo conceptual</span>
+                            <h1>Una web estética puede acompañar la decisión con más delicadeza y claridad.</h1>
+                            <p>
+                                Esta demo muestra cómo un centro de estética podría usar un asistente para guiar tratamientos, orientar según objetivo y terminar derivando la conversación con más contexto. Todo es ejemplo visual, sin base de datos ni agenda real.
+                            </p>
+
+                            <div class="demo-hero-actions">
+                                <a href="#asistente" class="demo-button demo-button-primary">Ver asistente</a>
+                                <a href="https://wa.me/5493757466729?text=Hola%2C%20quiero%20una%20demo%20como%20Andina%20Estetica." target="_blank" rel="noreferrer" class="demo-button demo-button-secondary">Pedir algo similar</a>
+                            </div>
+
+                            <div class="demo-highlight-list">
+                                <div class="demo-highlight-item"><span class="demo-highlight-dot"></span> Sugiere tratamientos según objetivo o zona.</div>
+                                <div class="demo-highlight-item"><span class="demo-highlight-dot"></span> Explica sin sentirse invasivo ni técnico de más.</div>
+                                <div class="demo-highlight-item"><span class="demo-highlight-dot"></span> Funciona como asistente comercial elegante y moderno.</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <aside class="demo-panel demo-preview demo-reveal">
+                        <div class="demo-preview-head">
+                            <div>
+                                <strong>Vista del centro</strong>
+                                <div class="demo-browser-url">andina estética · experiencia demo</div>
+                            </div>
+                            <span class="demo-badge">Sin backend</span>
+                        </div>
+                        <div class="demo-preview-body">
+                            <article class="demo-mini-card">
+                                <strong>Consultas más suaves</strong>
+                                <p>Puede recibir consultas sobre faciales, depilación definitiva, masajes, aparatología o combos de bienestar.</p>
+                            </article>
+                            <div class="demo-stats">
+                                <div class="demo-stat"><strong>+ confianza</strong><span>Proceso más claro</span></div>
+                                <div class="demo-stat"><strong>+ estética</strong><span>Look premium</span></div>
+                                <div class="demo-stat"><strong>+ orden</strong><span>Atención comercial</span></div>
+                            </div>
+                            <article class="demo-mini-card">
+                                <strong>Cómo podría aplicarse</strong>
+                                <p>La persona elige tratamiento, zona, objetivo y disponibilidad. El sistema ordena esa intención y la deriva con una propuesta inicial mucho más entendible.</p>
+                            </article>
+                        </div>
+                    </aside>
+                </section>
+
+                <section class="demo-section demo-reveal">
+                    <div class="demo-section-heading">
+                        <span class="demo-badge">Qué mostraría la demo</span>
+                        <h2>Un asistente amable, visual y alineado a un servicio premium.</h2>
+                        <p>La idea es que el cliente entienda rápido cómo podría funcionar dentro de una estética real, sin tener que imaginar demasiado ni lidiar con un backend complejo.</p>
+                    </div>
+
+                    <div class="demo-grid-three">
+                        <article class="demo-info-card">
+                            <h3>Filtra intención</h3>
+                            <p>Puede separar si la persona busca relajación, tratamiento puntual, estética facial o corporal.</p>
+                            <div class="demo-tag-row">
+                                <span class="demo-tag">Faciales</span>
+                                <span class="demo-tag">Corporal</span>
+                                <span class="demo-tag">Bienestar</span>
+                            </div>
+                        </article>
+                        <article class="demo-info-card">
+                            <h3>Explica sin saturar</h3>
+                            <p>Ayuda a diferenciar tratamientos, tiempos y beneficios con un tono cálido y comercial.</p>
+                            <div class="demo-tag-row">
+                                <span class="demo-tag">Asesoramiento</span>
+                                <span class="demo-tag">Derivación</span>
+                                <span class="demo-tag">WhatsApp</span>
+                            </div>
+                        </article>
+                        <article class="demo-info-card">
+                            <h3>Mejora la atención</h3>
+                            <p>Cuando llega la consulta humana, ya llega mejor armada y con menos dudas básicas por resolver.</p>
+                            <div class="demo-tag-row">
+                                <span class="demo-tag">Más contexto</span>
+                                <span class="demo-tag">Menos fricción</span>
+                                <span class="demo-tag">Más conversión</span>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="demo-showcase" id="asistente">
+                    <article class="demo-panel demo-device demo-reveal">
+                        <div class="demo-browser">
+                            <div class="demo-browser-top">
+                                <div class="demo-browser-dots"><span></span><span></span><span></span></div>
+                                <div class="demo-browser-url">andinaestetica.demo</div>
+                            </div>
+                            <div class="demo-browser-content">
+                                <div class="demo-site-card">
+                                    <span class="demo-badge">Sitio ejemplo</span>
+                                    <h3>Estética pensada para sentirse bien, desde la primera consulta.</h3>
+                                    <p>La web podría combinar servicios, promociones, preguntas frecuentes, testimonios y el asistente para ordenar la intención del contacto antes de seguir por WhatsApp.</p>
+
+                                    <div class="demo-site-metrics">
+                                        <div><strong>Faciales</strong><span>Limpieza, glow, hidratación</span></div>
+                                        <div><strong>Corporal</strong><span>Drenaje, radiofrecuencia, masajes</span></div>
+                                        <div><strong>Bienestar</strong><span>Combos, spa express, relax</span></div>
+                                    </div>
+
+                                    <div class="demo-site-steps">
+                                        <div class="demo-site-step">
+                                            <strong>1</strong>
+                                            <div>
+                                                <h4>Identifica el objetivo</h4>
+                                                <p>Relajación, estética, mantenimiento o tratamiento puntual.</p>
+                                            </div>
+                                        </div>
+                                        <div class="demo-site-step">
+                                            <strong>2</strong>
+                                            <div>
+                                                <h4>Guía sin presión</h4>
+                                                <p>Hace una experiencia más cuidada y menos fría que un formulario.</p>
+                                            </div>
+                                        </div>
+                                        <div class="demo-site-step">
+                                            <strong>3</strong>
+                                            <div>
+                                                <h4>Deriva con intención clara</h4>
+                                                <p>La conversación humana continúa con mucha más información útil.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <aside class="demo-assistant-card demo-reveal" data-demo-assistant>
+                        <script type="application/json">
+                            {
+                                "businessName": "Andina Estética",
+                                "assistantName": "Andina Beauty Assistant",
+                                "assistantTag": "Demo guiada para estética",
+                                "directActionLabel": "Hablar directo por WhatsApp",
+                                "directActionHref": "https://wa.me/5493757466729?text=Hola%2C%20quiero%20una%20demo%20como%20Andina%20Estetica.",
+                                "summaryLabel": "Resumen de reserva demo",
+                                "finalButtonLabel": "Pedir demo para mi centro",
+                                "finalButtonHref": "https://wa.me/5493757466729?text=Hola%2C%20quiero%20un%20asistente%20de%20estetica%20como%20esta%20demo%2C%20con%20reserva%20guiada.",
+                                "flow": [
+                                    {
+                                        "key": "interest",
+                                        "label": "Interés",
+                                        "shortLabel": "Interés",
+                                        "question": "Hola. Soy la asistente demo de Andina Estética. ¿Qué te gustaría explorar primero?",
+                                        "options": [
+                                            {"value": "facial", "label": "Tratamiento facial"},
+                                            {"value": "corporal", "label": "Tratamiento corporal"},
+                                            {"value": "relax", "label": "Masajes / relax"},
+                                            {"value": "depilacion", "label": "Depilación definitiva"},
+                                            {"value": "no-se", "label": "Quiero orientación"}
+                                        ]
+                                    },
+                                    {
+                                        "key": "goal",
+                                        "label": "Objetivo",
+                                        "shortLabel": "Objetivo",
+                                        "question": "Entiendo. ¿Qué resultado te gustaría lograr?",
+                                        "options": [
+                                            {"value": "mejorar", "label": "Mejorar aspecto / glow"},
+                                            {"value": "mantenimiento", "label": "Mantenimiento"},
+                                            {"value": "relajar", "label": "Relajarme"},
+                                            {"value": "consultar", "label": "Solo consultar opciones"}
+                                        ]
+                                    },
+                                    {
+                                        "key": "availability",
+                                        "label": "Disponibilidad",
+                                        "shortLabel": "Disponibilidad",
+                                        "question": "¿Cómo te gustaría avanzar?",
+                                        "options": [
+                                            {"value": "esta-semana", "label": "Me gustaría esta semana"},
+                                            {"value": "fecha", "label": "Tengo una fecha puntual"},
+                                            {"value": "promo", "label": "Quiero ver promos o combos"},
+                                            {"value": "hablar", "label": "Prefiero que me orienten"}
+                                        ]
+                                    },
+                                    {
+                                        "key": "date",
+                                        "label": "Fecha sugerida",
+                                        "shortLabel": "Fecha",
+                                        "question": "Te comparto fechas de ejemplo para esta demo. ¿Cuál preferís?",
+                                        "options": [
+                                            {"value": "miercoles-03-abril", "label": "Miércoles 3 de abril"},
+                                            {"value": "viernes-05-abril", "label": "Viernes 5 de abril"},
+                                            {"value": "lunes-08-abril", "label": "Lunes 8 de abril"}
+                                        ]
+                                    },
+                                    {
+                                        "key": "time",
+                                        "label": "Horario sugerido",
+                                        "shortLabel": "Horario",
+                                        "question": "¿Y qué horario de ejemplo te resultaría más cómodo?",
+                                        "options": [
+                                            {"value": "09-30", "label": "09:30"},
+                                            {"value": "14-00", "label": "14:00"},
+                                            {"value": "17-15", "label": "17:15"}
+                                        ]
+                                    },
+                                    {
+                                        "key": "details",
+                                        "label": "Detalle",
+                                        "shortLabel": "Detalle",
+                                        "question": "Si querés, sumá un detalle más para cerrar esta reserva demo con una recomendación más personalizada.",
+                                        "type": "text",
+                                        "placeholder": "Ejemplo: busco algo suave, natural y que no me saque mucho tiempo."
+                                    }
+                                ]
+                            }
+                        </script>
+                        <div class="demo-assistant-head">
+                            <div class="demo-assistant-brand">
+                                <span class="demo-assistant-avatar" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                        <path d="M12 3c2.4 3.3 3.6 5.8 3.6 7.6A3.6 3.6 0 1 1 8.4 10.6C8.4 8.8 9.6 6.3 12 3Z"/>
+                                        <path d="M6 17c1.3 2.2 3.2 3 6 3s4.7-.8 6-3"/>
+                                    </svg>
+                                </span>
+                                <div>
+                                    <strong>Andina Beauty Assistant</strong>
+                                    <small>Demo guiada para estética</small>
+                                </div>
+                            </div>
+                            <span class="demo-badge">Sin base de datos</span>
+                        </div>
+                        <div class="demo-assistant-demo">Este demo muestra cómo podría responder un asistente comercial para estética dentro de una web moderna.</div>
+                        <div class="demo-assistant-messages" data-demo-messages></div>
+                        <div class="demo-assistant-footer">
+                            <a data-demo-direct class="demo-direct-link" href="https://wa.me/5493757466729?text=Hola%2C%20quiero%20una%20demo%20como%20Andina%20Estetica.">Hablar directo por WhatsApp</a>
+                            <div class="demo-actions" data-demo-actions></div>
+                            <form class="demo-input-row" data-demo-form>
+                                <input data-demo-input type="text" placeholder="Podés escribir un detalle o tocar una opción...">
+                                <button type="submit" class="demo-send">Enviar</button>
+                            </form>
+                        </div>
+                    </aside>
+                </section>
+
+                <section class="demo-section demo-reveal">
+                    <div class="demo-gallery">
+                        <article class="demo-gallery-card demo-gallery-card--one">
+                            <div>
+                                <h3>Relación más suave</h3>
+                                <p>Una conversación más humana y menos fría para servicios sensibles o premium.</p>
+                            </div>
+                        </article>
+                        <article class="demo-gallery-card demo-gallery-card--two">
+                            <div>
+                                <h3>Consultas más calificadas</h3>
+                                <p>Filtra objetivo, urgencia y preferencia sin depender de un formulario largo.</p>
+                            </div>
+                        </article>
+                        <article class="demo-gallery-card demo-gallery-card--three">
+                            <div>
+                                <h3>Showcase moderno</h3>
+                                <p>Sirve perfecto como demo comercial para mostrarle al cliente cómo lo usaría.</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="demo-footer">
+            <div class="demo-container">
+                <div class="demo-footer-card">
+                    <p>Demo conceptual creada para mostrar asistentes virtuales aplicados a estética y bienestar.</p>
+                    <a href="./cursos" class="demo-button demo-button-secondary">Ver demo cursos</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="./demo-assistant.js"></script>
+</body>
+</html>

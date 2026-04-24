@@ -1,0 +1,8 @@
+Options -MultiViews
+RewriteEngine On
+
+# Permite rutas limpias para páginas estáticas, por ejemplo /linktree -> /linktree.html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{DOCUMENT_ROOT}/bariloche-webs/$1.html -f
+RewriteRule ^([a-zA-Z0-9\-_\/]+)$ $1.html [L]

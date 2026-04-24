@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andina Cursos | Demo de asistente virtual | WebAndina</title>
+    <meta name="description" content="Demo conceptual de asistente virtual para cursos, academias y formaciones. Ejemplo de recorridos comerciales guiados sin base de datos.">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link rel="apple-touch-icon" href="./favicon-180.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./demo-assistant.css">
+    <style>
+        body.demo-page {
+            --demo-bg: #15130b;
+            --demo-bg-soft: #262011;
+            --demo-accent: #ffcf74;
+            --demo-accent-strong: #f0a93d;
+            --demo-accent-soft: rgba(255, 207, 116, 0.16);
+            --demo-line: rgba(255, 207, 116, 0.18);
+        }
+
+        .cursos-grid-glow {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            background:
+                radial-gradient(circle at 16% 10%, rgba(255,255,255,0.10), transparent 20%),
+                radial-gradient(circle at 86% 16%, rgba(255, 207, 116, 0.22), transparent 24%),
+                linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.02) 100%);
+        }
+    </style>
+</head>
+<body class="demo-page">
+    <div class="cursos-grid-glow" aria-hidden="true"></div>
+
+    <div class="demo-shell">
+        <header class="demo-topbar">
+            <div class="demo-container">
+                <div class="demo-topbar-inner">
+                    <a class="demo-brand" href="./index.html">
+                        <span class="demo-brand-mark" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M4 6h16v12H4z"/>
+                                <path d="M8 10h8"/>
+                                <path d="M8 14h5"/>
+                            </svg>
+                        </span>
+                        <span class="demo-brand-copy">
+                            <strong>Andina Cursos</strong>
+                            <small>Demo de asistente virtual</small>
+                        </span>
+                    </a>
+
+                    <nav class="demo-nav">
+                        <a href="./peluqueria">Peluquería</a>
+                        <a href="./estetica">Estética</a>
+                        <a href="./cursos">Cursos</a>
+                        <a href="./index.html" class="demo-pill-link">Volver a WebAndina</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main class="demo-main">
+            <div class="demo-container">
+                <section class="demo-hero">
+                    <article class="demo-panel demo-reveal">
+                        <div class="demo-panel-copy">
+                            <span class="demo-badge">Demo conceptual</span>
+                            <h1>Una academia puede usar un asistente para vender mejor cada formación.</h1>
+                            <p>
+                                Este ejemplo muestra cómo una web de cursos podría guiar a una persona según objetivo, formato, nivel y modalidad. No es un sistema de alumnos ni de pagos: es una demo para mostrar el recorrido comercial con claridad.
+                            </p>
+
+                            <div class="demo-hero-actions">
+                                <a href="#asistente" class="demo-button demo-button-primary">Ver asistente</a>
+                                <a href="https://wa.me/5493757466729?text=Hola%2C%20quiero%20una%20demo%20como%20Andina%20Cursos." target="_blank" rel="noreferrer" class="demo-button demo-button-secondary">Pedir algo similar</a>
+                            </div>
+
+                            <div class="demo-highlight-list">
+                                <div class="demo-highlight-item"><span class="demo-highlight-dot"></span> Puede orientar por curso, nivel y modalidad.</div>
+                                <div class="demo-highlight-item"><span class="demo-highlight-dot"></span> Ideal para academias, workshops o membresías.</div>
+                                <div class="demo-highlight-item"><span class="demo-highlight-dot"></span> Deja claro cómo usar IA para precalificar interesados.</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <aside class="demo-panel demo-preview demo-reveal">
+                        <div class="demo-preview-head">
+                            <div>
+                                <strong>Vista de academia</strong>
+                                <div class="demo-browser-url">andinacursos.demo · landing educativa</div>
+                            </div>
+                            <span class="demo-badge">Showcase</span>
+                        </div>
+                        <div class="demo-preview-body">
+                            <article class="demo-mini-card">
+                                <strong>Consultas ordenadas</strong>
+                                <p>El asistente puede distinguir si la persona busca iniciarse, profesionalizarse o ver un workshop puntual.</p>
+                            </article>
+                            <div class="demo-stats">
+                                <div class="demo-stat"><strong>Online</strong><span>Clases virtuales</span></div>
+                                <div class="demo-stat"><strong>Presencial</strong><span>Fechas y cupos</span></div>
+                                <div class="demo-stat"><strong>Mixto</strong><span>Recorridos flexibles</span></div>
+                            </div>
+                            <article class="demo-mini-card">
+                                <strong>Cómo podría aplicarse</strong>
+                                <p>La persona dice qué quiere aprender, cuánto tiempo tiene, qué formato prefiere y el sistema deriva una recomendación inicial mucho más dirigida.</p>
+                            </article>
+                        </div>
+                    </aside>
+                </section>
+
+                <section class="demo-section demo-reveal">
+                    <div class="demo-section-heading">
+                        <span class="demo-badge">Caso de uso</span>
+                        <h2>Un asistente comercial para cursos puede ahorrar muchísimo tiempo.</h2>
+                        <p>En vez de responder siempre lo mismo por WhatsApp o Instagram, la academia recibe leads más claros y más cerca de decidir.</p>
+                    </div>
+
+                    <div class="demo-grid-two">
+                        <article class="demo-case-card">
+                            <h3>Para academias</h3>
+                            <p>Sirve para ordenar consultas de formaciones largas, membresías, programas intensivos o mentorías.</p>
+                            <ul>
+                                <li>Clasifica por nivel</li>
+                                <li>Filtra modalidad deseada</li>
+                                <li>Resume objetivo del alumno</li>
+                            </ul>
+                        </article>
+                        <article class="demo-case-card">
+                            <h3>Para workshops</h3>
+                            <p>También funciona perfecto en cursos cortos, talleres o lanzamientos con fecha, cupos y beneficios concretos.</p>
+                            <ul>
+                                <li>Ayuda a entender si el curso encaja</li>
+                                <li>Reduce preguntas repetidas</li>
+                                <li>Deriva la conversación con contexto</li>
+                            </ul>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="demo-showcase" id="asistente">
+                    <article class="demo-panel demo-device demo-reveal">
+                        <div class="demo-browser">
+                            <div class="demo-browser-top">
+                                <div class="demo-browser-dots"><span></span><span></span><span></span></div>
+                                <div class="demo-browser-url">andinacursos.demo</div>
+                            </div>
+                            <div class="demo-browser-content">
+                                <div class="demo-site-card">
+                                    <span class="demo-badge">Sitio ejemplo</span>
+                                    <h3>Aprendé con una experiencia más clara desde el primer clic.</h3>
+                                    <p>La web de cursos podría mostrar programas, beneficios, docentes, modalidades y sumar un asistente que ayude a orientar a cada interesado según su momento.</p>
+
+                                    <div class="demo-site-metrics">
+                                        <div><strong>Iniciación</strong><span>Para quienes arrancan</span></div>
+                                        <div><strong>Intermedio</strong><span>Más profundidad</span></div>
+                                        <div><strong>Pro</strong><span>Programas avanzados</span></div>
+                                    </div>
+
+                                    <div class="demo-site-steps">
+                                        <div class="demo-site-step">
+                                            <strong>1</strong>
+                                            <div>
+                                                <h4>Entiende el objetivo</h4>
+                                                <p>No todos buscan lo mismo ni están en el mismo punto.</p>
+                                            </div>
+                                        </div>
+                                        <div class="demo-site-step">
+                                            <strong>2</strong>
+                                            <div>
+                                                <h4>Orienta por formato y nivel</h4>
+                                                <p>Online, presencial, intensivo, grabado o mentoría.</p>
+                                            </div>
+                                        </div>
+                                        <div class="demo-site-step">
+                                            <strong>3</strong>
+                                            <div>
+                                                <h4>Prepara la derivación</h4>
+                                                <p>La academia recibe un lead más ordenado y más cerca de convertirse.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <aside class="demo-assistant-card demo-reveal" data-demo-assistant>
+                        <script type="application/json">
+                            {
+                                "businessName": "Andina Cursos",
+                                "assistantName": "Andina Course Assistant",
+                                "assistantTag": "Demo guiada para academias",
+                                "directActionLabel": "Hablar directo por WhatsApp",
+                                "directActionHref": "https://wa.me/5493757466729?text=Hola%2C%20quiero%20una%20demo%20como%20Andina%20Cursos.",
+                                "summaryLabel": "Resumen de interés demo",
+                                "finalButtonLabel": "Pedir demo para mi academia",
+                                "finalButtonHref": "https://wa.me/5493757466729?text=Hola%2C%20quiero%20un%20asistente%20para%20cursos%20como%20esta%20demo.",
+                                "flow": [
+                                    {
+                                        "key": "goal",
+                                        "label": "Objetivo",
+                                        "shortLabel": "Objetivo",
+                                        "question": "Hola. Soy la asistente demo de Andina Cursos. ¿Qué te gustaría aprender o resolver?",
+                                        "options": [
+                                            {"value": "iniciarme", "label": "Quiero iniciarme"},
+                                            {"value": "profundizar", "label": "Quiero profundizar"},
+                                            {"value": "certificar", "label": "Busco algo más profesional"},
+                                            {"value": "workshop", "label": "Quiero un workshop puntual"},
+                                            {"value": "no-se", "label": "No estoy segura, quiero guía"}
+                                        ]
+                                    },
+                                    {
+                                        "key": "format",
+                                        "label": "Formato",
+                                        "shortLabel": "Formato",
+                                        "question": "¿Qué modalidad te resultaría más cómoda?",
+                                        "options": [
+                                            {"value": "online", "label": "Online"},
+                                            {"value": "presencial", "label": "Presencial"},
+                                            {"value": "mixto", "label": "Mixto"},
+                                            {"value": "grabado", "label": "Contenido grabado"}
+                                        ]
+                                    },
+                                    {
+                                        "key": "availability",
+                                        "label": "Tiempo",
+                                        "shortLabel": "Tiempo",
+                                        "question": "¿Cómo preferís avanzar con la formación?",
+                                        "options": [
+                                            {"value": "intensivo", "label": "Programa intensivo"},
+                                            {"value": "semanal", "label": "Cursado semanal"},
+                                            {"value": "a-mi-ritmo", "label": "A mi ritmo"},
+                                            {"value": "asesoria", "label": "Quiero asesoramiento"}
+                                        ]
+                                    },
+                                    {
+                                        "key": "details",
+                                        "label": "Detalle",
+                                        "shortLabel": "Detalle",
+                                        "question": "Si querés, agregá un detalle extra sobre lo que te interesa aprender.",
+                                        "type": "text",
+                                        "placeholder": "Ejemplo: me gustaría algo práctico y aplicable para empezar pronto."
+                                    }
+                                ]
+                            }
+                        </script>
+                        <div class="demo-assistant-head">
+                            <div class="demo-assistant-brand">
+                                <span class="demo-assistant-avatar" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                        <path d="M4 6h16v12H4z"/>
+                                        <path d="M8 10h8"/>
+                                        <path d="M8 14h5"/>
+                                    </svg>
+                                </span>
+                                <div>
+                                    <strong>Andina Course Assistant</strong>
+                                    <small>Demo guiada para academias</small>
+                                </div>
+                            </div>
+                            <span class="demo-badge">Sin base de datos</span>
+                        </div>
+                        <div class="demo-assistant-demo">Este demo muestra cómo un asistente virtual podría orientar alumnos o interesados sin depender de una base funcional.</div>
+                        <div class="demo-assistant-messages" data-demo-messages></div>
+                        <div class="demo-assistant-footer">
+                            <a data-demo-direct class="demo-direct-link" href="https://wa.me/5493757466729?text=Hola%2C%20quiero%20una%20demo%20como%20Andina%20Cursos.">Hablar directo por WhatsApp</a>
+                            <div class="demo-actions" data-demo-actions></div>
+                            <form class="demo-input-row" data-demo-form>
+                                <input data-demo-input type="text" placeholder="Podés escribir un detalle o tocar una opción...">
+                                <button type="submit" class="demo-send">Enviar</button>
+                            </form>
+                        </div>
+                    </aside>
+                </section>
+
+                <section class="demo-section demo-reveal">
+                    <div class="demo-gallery">
+                        <article class="demo-gallery-card demo-gallery-card--one">
+                            <div>
+                                <h3>Recorrido comercial</h3>
+                                <p>Hace tangible cómo una academia podría convertir consultas en conversaciones útiles.</p>
+                            </div>
+                        </article>
+                        <article class="demo-gallery-card demo-gallery-card--two">
+                            <div>
+                                <h3>Segmentación suave</h3>
+                                <p>Ayuda a separar si la persona está empezando, comparando o lista para inscribirse.</p>
+                            </div>
+                        </article>
+                        <article class="demo-gallery-card demo-gallery-card--three">
+                            <div>
+                                <h3>Showcase vendible</h3>
+                                <p>Es una demo ideal para enseñar cómo quedaría un sitio de formación con IA aplicada.</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="demo-footer">
+            <div class="demo-container">
+                <div class="demo-footer-card">
+                    <p>Demo conceptual creada para mostrar cómo la IA también puede ayudar a vender formaciones y cursos.</p>
+                    <a href="./peluqueria" class="demo-button demo-button-secondary">Volver a demo peluquería</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="./demo-assistant.js"></script>
+</body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andina Peluquería | Demo de asistente virtual | WebAndina</title>
+    <meta name="description" content="Demo conceptual de asistente virtual para peluquerías. Ejemplo de cómo una web con asistente puede guiar reservas, servicios y consultas sin base de datos.">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link rel="apple-touch-icon" href="./favicon-180.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./demo-assistant.css">
+    <style>
+        body.demo-page {
+            --demo-bg: #1a0f18;
+            --demo-bg-soft: #2a1627;
+            --demo-accent: #ff7fbe;
+            --demo-accent-strong: #ff4f9a;
+            --demo-accent-soft: rgba(255, 127, 190, 0.16);
+            --demo-line: rgba(255, 166, 212, 0.18);
+        }
+
+        .peluqueria-wave {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            background:
+                radial-gradient(circle at 15% 10%, rgba(255,255,255,0.12), transparent 20%),
+                radial-gradient(circle at 85% 15%, rgba(255, 127, 190, 0.18), transparent 22%),
+                radial-gradient(circle at 60% 80%, rgba(255,255,255,0.07), transparent 20%);
+        }
+    </style>
+</head>
+<body class="demo-page">
+    <div class="peluqueria-wave" aria-hidden="true"></div>
+
+    <div class="demo-shell">
+        <header class="demo-topbar">
+            <div class="demo-container">
+                <div class="demo-topbar-inner">
+                    <a class="demo-brand" href="./index.html">
+                        <span class="demo-brand-mark" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M7 4c1.2 1.2 1.8 2.5 1.8 4S8.2 10.8 7 12"/>
+                                <path d="M17 4c-1.2 1.2-1.8 2.5-1.8 4s.6 2.8 1.8 4"/>
+                                <path d="M9.5 13.5 14.5 8.5"/>
+                                <path d="M6 18h12"/>
+                            </svg>
+                        </span>
+                        <span class="demo-brand-copy">
+                            <strong>Andina Peluquería</strong>
+                            <small>Demo de asistente virtual</small>
+                        </span>
+                    </a>
+
+                    <nav class="demo-nav">
+                        <a href="./peluqueria">Peluquería</a>
+                        <a href="./estetica">Estética</a>
+                        <a href="./cursos">Cursos</a>
+                        <a href="./index.html" class="demo-pill-link">Volver a WebAndina</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main class="demo-main">
+            <div class="demo-container">
+                <section class="demo-hero">
+                    <article class="demo-panel demo-reveal">
+                        <div class="demo-panel-copy">
+                            <span class="demo-badge">Demo conceptual</span>
+                            <h1>Una peluquería puede vender mejor desde la primera charla.</h1>
+                            <p>
+                                Este ejemplo muestra cómo una web para peluquería podría resolver consultas, mostrar servicios, guiar la elección y acompañar a la persona hasta pedir turno. Es una demo sin base de datos, pensada para visualizar el uso real.
+                            </p>
+
+                            <div class="demo-hero-actions">
+                                <a href="#asistente" class="demo-button demo-button-primary">Ver asistente</a>
+                                <a href="https://wa.me/5493757466729?text=Hola%2C%20quiero%20una%20demo%20como%20Andina%20Peluqueria." target="_blank" rel="noreferrer" class="demo-button demo-button-secondary">Pedir algo similar</a>
+                            </div>
+
+                            <div class="demo-highlight-list">
+                                <div class="demo-highlight-item"><span class="demo-highlight-dot"></span> Guía por tipo de servicio, urgencia y estilo.</div>
+                                <div class="demo-highlight-item"><span class="demo-highlight-dot"></span> Puede sugerir color, corte, brushing o combos.</div>
+                                <div class="demo-highlight-item"><span class="demo-highlight-dot"></span> Termina derivando a WhatsApp con el pedido ya ordenado.</div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <aside class="demo-panel demo-preview demo-reveal">
+                        <div class="demo-preview-head">
+                            <div>
+                                <strong>Vista del negocio</strong>
+                                <div class="demo-browser-url">andina peluquería · demo comercial</div>
+                            </div>
+                            <span class="demo-badge">Responsive</span>
+                        </div>
+                        <div class="demo-preview-body">
+                            <article class="demo-mini-card">
+                                <strong>Servicios destacados</strong>
+                                <p>Cortes, color, balayage, peinados para eventos, brushing, tratamientos y asesoramiento previo guiado por asistente.</p>
+                            </article>
+                            <div class="demo-stats">
+                                <div class="demo-stat"><strong>24/7</strong><span>Recepción de consultas</span></div>
+                                <div class="demo-stat"><strong>+ orden</strong><span>Pedidos más claros</span></div>
+                                <div class="demo-stat"><strong>1 clic</strong><span>Derivación a WhatsApp</span></div>
+                            </div>
+                            <article class="demo-mini-card">
+                                <strong>Cómo podría usarse</strong>
+                                <p>La persona entra, elige si quiere corte, color o peinado, aclara largo, fecha y estilo deseado, y el sistema arma un mensaje prolijo para seguir por WhatsApp.</p>
+                            </article>
+                        </div>
+                    </aside>
+                </section>
+
+                <section class="demo-section demo-reveal">
+                    <div class="demo-section-heading">
+                        <span class="demo-badge">Qué resuelve</span>
+                        <h2>Una demo pensada para mostrar una experiencia realista.</h2>
+                        <p>No es un formulario frío. Es una conversación guiada que ayuda a la clienta a entender qué pedir y a la peluquería a recibir un pedido mucho más claro.</p>
+                    </div>
+
+                    <div class="demo-grid-three">
+                        <article class="demo-info-card">
+                            <h3>Antes del turno</h3>
+                            <p>Filtra si busca corte, color, peinado o tratamiento y ordena expectativas desde el primer contacto.</p>
+                            <ul>
+                                <li>Reduce mensajes ambiguos</li>
+                                <li>Evita idas y vueltas</li>
+                                <li>Ayuda a cotizar mejor</li>
+                            </ul>
+                        </article>
+                        <article class="demo-info-card">
+                            <h3>Durante la decisión</h3>
+                            <p>Puede mostrar referencias, explicar diferencias entre servicios y sugerir el camino más conveniente.</p>
+                            <ul>
+                                <li>Balayage vs color pleno</li>
+                                <li>Brushing vs peinado social</li>
+                                <li>Promos o combos sugeridos</li>
+                            </ul>
+                        </article>
+                        <article class="demo-info-card">
+                            <h3>Después de la charla</h3>
+                            <p>Termina en WhatsApp con un resumen elegante para seguir por fuera con la atención humana.</p>
+                            <ul>
+                                <li>Nombre del servicio</li>
+                                <li>Fecha ideal o urgencia</li>
+                                <li>Preferencias de estilo</li>
+                            </ul>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="demo-showcase" id="asistente">
+                    <article class="demo-panel demo-device demo-reveal">
+                        <div class="demo-browser">
+                            <div class="demo-browser-top">
+                                <div class="demo-browser-dots"><span></span><span></span><span></span></div>
+                                <div class="demo-browser-url">andinapeluqueria.demo</div>
+                            </div>
+                            <div class="demo-browser-content">
+                                <div class="demo-site-card">
+                                    <span class="demo-badge">Sitio ejemplo</span>
+                                    <h3>Tu pelo, tu estilo, tu tiempo.</h3>
+                                    <p>Una landing o web institucional para peluquería podría mostrar resultados, paquetes, staff, FAQ y el asistente como primer paso para ordenar la atención.</p>
+
+                                    <div class="demo-site-metrics">
+                                        <div><strong>Cortes</strong><span>Mujer, hombre y kids</span></div>
+                                        <div><strong>Color</strong><span>Balayage, baño y reflejos</span></div>
+                                        <div><strong>Eventos</strong><span>Peinado y make express</span></div>
+                                    </div>
+
+                                    <div class="demo-site-steps">
+                                        <div class="demo-site-step">
+                                            <strong>1</strong>
+                                            <div>
+                                                <h4>El asistente pregunta lo justo</h4>
+                                                <p>Servicio, fecha, largo, estilo e idea visual.</p>
+                                            </div>
+                                        </div>
+                                        <div class="demo-site-step">
+                                            <strong>2</strong>
+                                            <div>
+                                                <h4>Ordena la conversación</h4>
+                                                <p>Le muestra a la persona qué opciones encajan mejor.</p>
+                                            </div>
+                                        </div>
+                                        <div class="demo-site-step">
+                                            <strong>3</strong>
+                                            <div>
+                                                <h4>Deriva con contexto completo</h4>
+                                                <p>La peluquería sigue la charla ya con el pedido armado.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <aside class="demo-assistant-card demo-reveal" data-demo-assistant>
+                        <script type="application/json">
+                            {
+                                "businessName": "Andina Peluquería",
+                                "assistantName": "Andina Hair Assistant",
+                                "assistantTag": "Demo guiada para peluquerías",
+                                "directActionLabel": "Hablar directo por WhatsApp",
+                                "directActionHref": "https://wa.me/5493757466729?text=Hola%2C%20quiero%20una%20demo%20como%20Andina%20Peluqueria.",
+                                "summaryLabel": "Resumen de turno demo",
+                                "finalButtonLabel": "Pedir demo para mi peluquería",
+                                "finalButtonHref": "https://wa.me/5493757466729?text=Hola%2C%20quiero%20un%20asistente%20de%20peluqueria%20como%20esta%20demo%2C%20con%20flujo%20de%20turnos%20guiado.",
+                                "flow": [
+                                    {
+                                        "key": "service",
+                                        "label": "Servicio",
+                                        "shortLabel": "Servicio",
+                                        "question": "Hola. Soy la asistente demo de Andina Peluquería. ¿Qué te gustaría resolver primero?",
+                                        "options": [
+                                            {"value": "corte", "label": "Corte"},
+                                            {"value": "color", "label": "Color / balayage"},
+                                            {"value": "peinado", "label": "Peinado para evento"},
+                                            {"value": "tratamiento", "label": "Tratamiento"},
+                                            {"value": "combo", "label": "Quiero asesoramiento"}
+                                        ]
+                                    },
+                                    {
+                                        "key": "timing",
+                                        "label": "Momento",
+                                        "shortLabel": "Cuándo",
+                                        "question": "Perfecto. ¿Para cuándo sería ideal?",
+                                        "options": [
+                                            {"value": "hoy", "label": "Hoy o mañana"},
+                                            {"value": "semana", "label": "Esta semana"},
+                                            {"value": "evento", "label": "Tengo una fecha puntual"},
+                                            {"value": "explorando", "label": "Solo estoy viendo opciones"}
+                                        ]
+                                    },
+                                    {
+                                        "key": "style",
+                                        "label": "Estilo",
+                                        "shortLabel": "Estilo",
+                                        "question": "¿Qué look o resultado te gustaría lograr?",
+                                        "options": [
+                                            {"value": "natural", "label": "Natural y prolijo"},
+                                            {"value": "impacto", "label": "Más cambio / impacto"},
+                                            {"value": "mantenimiento", "label": "Mantenimiento"},
+                                            {"value": "no-se", "label": "No estoy segura, quiero guía"}
+                                        ]
+                                    },
+                                    {
+                                        "key": "date",
+                                        "label": "Fecha sugerida",
+                                        "shortLabel": "Fecha",
+                                        "question": "Te muestro algunas fechas de ejemplo. ¿Cuál te quedaría mejor para este turno demo?",
+                                        "options": [
+                                            {"value": "martes-02-abril", "label": "Martes 2 de abril"},
+                                            {"value": "jueves-04-abril", "label": "Jueves 4 de abril"},
+                                            {"value": "sabado-06-abril", "label": "Sábado 6 de abril"}
+                                        ]
+                                    },
+                                    {
+                                        "key": "time",
+                                        "label": "Horario sugerido",
+                                        "shortLabel": "Horario",
+                                        "question": "Perfecto. ¿Qué horario de ejemplo preferís reservar?",
+                                        "options": [
+                                            {"value": "10-00", "label": "10:00"},
+                                            {"value": "15-30", "label": "15:30"},
+                                            {"value": "18-00", "label": "18:00"}
+                                        ]
+                                    },
+                                    {
+                                        "key": "details",
+                                        "label": "Detalle extra",
+                                        "shortLabel": "Detalle",
+                                        "question": "Genial. Si querés, sumá un detalle más para cerrar este turno demo con más contexto.",
+                                        "type": "text",
+                                        "placeholder": "Ejemplo: tengo pelo largo y quiero algo elegante para una fiesta."
+                                    }
+                                ]
+                            }
+                        </script>
+                        <div class="demo-assistant-head">
+                            <div class="demo-assistant-brand">
+                                <span class="demo-assistant-avatar" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                        <path d="M7 4c1.2 1.2 1.8 2.5 1.8 4S8.2 10.8 7 12"/>
+                                        <path d="M17 4c-1.2 1.2-1.8 2.5-1.8 4s.6 2.8 1.8 4"/>
+                                        <path d="M9.5 13.5 14.5 8.5"/>
+                                        <path d="M6 18h12"/>
+                                    </svg>
+                                </span>
+                                <div>
+                                    <strong>Andina Hair Assistant</strong>
+                                    <small>Demo guiada para peluquerías</small>
+                                </div>
+                            </div>
+                            <span class="demo-badge">Sin base de datos</span>
+                        </div>
+                        <div class="demo-assistant-demo">Este asistente es una demo conceptual: guía, ordena y muestra cómo podría usarse dentro de una web real.</div>
+                        <div class="demo-assistant-messages" data-demo-messages></div>
+                        <div class="demo-assistant-footer">
+                            <a data-demo-direct class="demo-direct-link" href="https://wa.me/5493757466729?text=Hola%2C%20quiero%20una%20demo%20como%20Andina%20Peluqueria.">Hablar directo por WhatsApp</a>
+                            <div class="demo-actions" data-demo-actions></div>
+                            <form class="demo-input-row" data-demo-form>
+                                <input data-demo-input type="text" placeholder="Podés escribir un detalle o tocar una opción...">
+                                <button type="submit" class="demo-send">Enviar</button>
+                            </form>
+                        </div>
+                    </aside>
+                </section>
+
+                <section class="demo-section demo-reveal">
+                    <div class="demo-section-heading">
+                        <span class="demo-badge">Qué podría incluir la demo</span>
+                        <h2>Una experiencia moderna, visual y clara para mostrar el concepto.</h2>
+                    </div>
+
+                    <div class="demo-gallery">
+                        <article class="demo-gallery-card demo-gallery-card--one">
+                            <div>
+                                <h3>Servicios premium</h3>
+                                <p>Cortes, color, peinados y tratamientos con foco en orden visual y conversión.</p>
+                            </div>
+                        </article>
+                        <article class="demo-gallery-card demo-gallery-card--two">
+                            <div>
+                                <h3>Turnos orientativos</h3>
+                                <p>Sin agenda real, pero mostrando cómo una clienta podría avanzar hasta pedir turno.</p>
+                            </div>
+                        </article>
+                        <article class="demo-gallery-card demo-gallery-card--three">
+                            <div>
+                                <h3>Venta de estilo</h3>
+                                <p>No solo responde: ayuda a imaginar el resultado y a elegir mejor.</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="demo-callout">
+                        <strong>Ideal para vender la idea a un cliente real</strong>
+                        <p>La página deja claro que es una demo, pero muestra una experiencia suficientemente realista como para que una peluquería entienda enseguida cómo podría aplicarlo en su negocio.</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="demo-footer">
+            <div class="demo-container">
+                <div class="demo-footer-card">
+                    <p>Demo conceptual creada por WebAndina para mostrar asistentes virtuales por rubro.</p>
+                    <a href="./estetica" class="demo-button demo-button-secondary">Ver demo estética</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="./demo-assistant.js"></script>
+</body>
+</html>
