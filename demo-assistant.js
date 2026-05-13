@@ -42,10 +42,10 @@ const demoAssistantDefaultConfig = {
     assistantName: 'Andina Assistant',
     assistantTag: 'Recorrido guiado de ejemplo',
     directActionLabel: 'Hablar por WhatsApp',
-    directActionHref: 'https://wa.me/5493757466729?text=Hola%2C%20quiero%20ver%20una%20demo%20de%20asistente%20virtual.',
+    directActionHref: 'https://wa.me/5492944324419?text=Hola%2C%20quiero%20ver%20una%20demo%20de%20asistente%20virtual.',
     summaryLabel: 'Resumen demo',
     finalButtonLabel: 'Ver propuesta sugerida',
-    finalButtonHref: 'https://wa.me/5493757466729?text=Hola%2C%20quiero%20una%20demo%20como%20esta%20para%20mi%20negocio.',
+    finalButtonHref: 'https://wa.me/5492944324419?text=Hola%2C%20quiero%20una%20demo%20como%20esta%20para%20mi%20negocio.',
     themeIcon: '',
     flow: [],
 };

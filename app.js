@@ -332,7 +332,7 @@ function initFloatingAssistant() {
 
         const send = document.createElement('a');
         send.className = 'webandina-action webandina-action-primary';
-        send.href = `https://wa.me/5493757466729?text=${encodeURIComponent(buildMessage())}`;
+        send.href = `https://wa.me/5492944324419?text=${encodeURIComponent(buildMessage())}`;
         send.target = '_blank';
         send.rel = 'noreferrer';
         send.textContent = 'Enviar propuesta por WhatsApp';
