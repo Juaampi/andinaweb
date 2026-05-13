@@ -1,3 +1,152 @@
+const clientCategories = [
+    {
+        eyebrow: 'Sistemas de gestion / turnos',
+        title: 'Sistemas de gestion, agenda y automatizacion diaria',
+        description: 'Soluciones pensadas para ordenar reservas, procesos internos y seguimiento de clientes sin depender de planillas o chats dispersos.',
+        clients: [
+            {
+                name: 'Sollci Nails',
+                projectType: 'Sistema de gestion / turnos',
+                url: 'https://sollcinails.site',
+                urlLabel: 'sollcinails.site',
+                description: 'Sistema de gestion de turnos y administracion para organizar clientes, reservas y procesos internos. La plataforma ayuda a automatizar la gestion diaria y mejorar la atencion al cliente.',
+            },
+        ],
+    },
+    {
+        eyebrow: 'Landing pages + CRM / gestion de clientes',
+        title: 'Presencia web conectada con seguimiento comercial',
+        description: 'Sitios orientados a presentar servicios con claridad y, al mismo tiempo, ordenar consultas, oportunidades y contactos desde una estructura mas profesional.',
+        clients: [
+            {
+                name: 'Prons Seguridad',
+                projectType: 'Landing profesional + gestion de clientes',
+                url: 'https://prons.com.ar',
+                urlLabel: 'prons.com.ar',
+                description: 'Landing profesional orientada a presentacion de servicios de seguridad, captacion de consultas y gestion de clientes o contactos. Combina presencia web con herramientas para ordenar leads y consultas comerciales.',
+            },
+        ],
+    },
+    {
+        eyebrow: 'Landing pages / cursos y capacitaciones',
+        title: 'Sitios para inscripciones, cursos y oferta educativa',
+        description: 'Paginas pensadas para transmitir confianza, explicar programas con claridad y facilitar el ingreso de nuevos alumnos o interesados.',
+        clients: [
+            {
+                name: 'Survial',
+                projectType: 'Landing de cursos y capacitaciones',
+                url: 'https://survial.com.ar',
+                urlLabel: 'survial.com.ar',
+                description: 'Landing para una propuesta vinculada a la Licencia Nacional de Conducir Profesional. El foco esta puesto en inscripcion, presentacion clara de los cursos, confianza y captacion de alumnos.',
+            },
+            {
+                name: 'Codigo Rojo',
+                projectType: 'Sitio / landing para academia',
+                url: 'https://academiacodigorrojo.com.ar',
+                urlLabel: 'academiacodigorrojo.com.ar',
+                description: 'Sitio orientado a una academia de cursos de emergencias, primeros auxilios y capacitaciones relacionadas. La estructura prioriza informacion clara, presentacion de la oferta y conversion de alumnos.',
+            },
+            {
+                name: 'Ameluz Cursos',
+                projectType: 'Landing o plataforma educativa',
+                url: 'https://ameluzcursos.site',
+                urlLabel: 'ameluzcursos.site',
+                description: 'Plataforma o landing orientada a la venta de cursos online. Permite presentar capacitaciones, captar interesados y facilitar el acceso a la oferta educativa.',
+            },
+        ],
+    },
+    {
+        eyebrow: 'Diarios y noticias',
+        title: 'Medios digitales con gestion de contenido',
+        description: 'Portales preparados para publicar noticias, destacar contenidos y sostener un flujo editorial ordenado desde un panel de administracion.',
+        clients: [
+            {
+                name: 'Diario Angostura Hoy',
+                projectType: 'Portal de noticias + panel de administracion',
+                url: 'https://diarioangosturahoy.com.ar',
+                urlLabel: 'diarioangosturahoy.com.ar',
+                description: 'Portal de noticias con panel de administracion para cargar, editar y gestionar publicaciones. Incluye categorias, noticias destacadas, gestion de contenido y una estructura pensada para medio digital.',
+            },
+        ],
+    },
+    {
+        eyebrow: 'Landing pages / comercios e industria',
+        title: 'Presentacion comercial para productos, catalogos y consultas',
+        description: 'Desarrollos enfocados en mostrar mejor una propuesta, ordenar la informacion tecnica y facilitar el contacto rapido para presupuestos o ventas asistidas.',
+        clients: [
+            {
+                name: 'Sbaiz Metal',
+                projectType: 'Landing comercial para industria y materiales',
+                url: 'https://sbaizmetal.com.ar',
+                urlLabel: 'sbaizmetal.com.ar',
+                description: 'Landing para venta de hierros, materiales metalicos y productos para construccion. El enfoque esta puesto en catalogo o presentacion de productos, contacto rapido y generacion de consultas comerciales.',
+            },
+        ],
+    },
+    {
+        eyebrow: 'Otros proyectos publicados',
+        title: 'Mas sitios activos desarrollados por AndinaWeb',
+        description: 'Tambien mantenemos otros proyectos online que suman experiencia real en presencia digital, estructura clara y sitios listos para operar.',
+        clients: [
+            {
+                name: 'Taller THP',
+                projectType: 'Sitio institucional publicado',
+                url: 'https://tallerthp.com',
+                urlLabel: 'tallerthp.com',
+                description: 'Sitio web publicado con enfoque en presencia digital clara, informacion ordenada y una presentacion profesional de la propuesta del negocio.',
+            },
+            {
+                name: 'Arfish',
+                projectType: 'Proyecto online activo',
+                url: 'https://arfish.com.ar',
+                urlLabel: 'arfish.com.ar',
+                description: 'Proyecto online activo pensado para comunicar mejor la marca, ordenar el contenido principal y facilitar el acceso a informacion y consultas.',
+            },
+        ],
+    },
+];
+
+const escapeHtml = (value) => String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+
+const renderClientsSection = () => {
+    const root = document.querySelector('[data-clients-categories]');
+
+    if (!root) {
+        return;
+    }
+
+    root.innerHTML = clientCategories.map((category) => `
+        <section class="client-category glass-card reveal">
+            <div class="client-category-head">
+                <span class="client-category-eyebrow">${escapeHtml(category.eyebrow)}</span>
+                <h3>${escapeHtml(category.title)}</h3>
+                <p>${escapeHtml(category.description)}</p>
+            </div>
+            <div class="client-category-grid">
+                ${category.clients.map((client) => `
+                    <article class="client-showcase-card reveal">
+                        <span class="client-label">Cliente real</span>
+                        <strong>${escapeHtml(client.name)}</strong>
+                        <p class="client-project-type">${escapeHtml(client.projectType)}</p>
+                        <p class="client-description">${escapeHtml(client.description)}</p>
+                        <a class="client-link" href="${escapeHtml(client.url)}" target="_blank" rel="noreferrer">
+                            <span>Visitar sitio</span>
+                            <small>${escapeHtml(client.urlLabel)}</small>
+                        </a>
+                    </article>
+                `).join('')}
+            </div>
+        </section>
+    `).join('');
+};
+
+renderClientsSection();
+
 const revealElements = document.querySelectorAll('.reveal');
 
 const observer = new IntersectionObserver((entries) => {
